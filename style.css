@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+:root { 
+
+--Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+--Red: hsl(0, 100%, 66%);
+--White: hsl(0, 0%, 100%);
+--Light-grayish-violet: hsl(270, 3%, 87%);
+--Dark-grayish-violet: hsl(279, 6%, 55%);
+--Very-dark-violet: hsl(278, 68%, 11%);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    position:relative;
+    font-size: 18px;
+}
+
+.bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    top:0;
+    left:0;
+}
+.bg-left{
+    flex:0.35;
+    background-image: url('bg-main-desktop.png');
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.bg-right{
+    flex:0.65;
+}
+main{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    z-index:3;
+    width:90vw;
+    max-width:1500px;
+    flex-wrap:wrap;
+}
+.cards{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.card{
+    margin:15px;
+}
+.front{
+    margin-right:100px;
+    position:relative;
+}
+.front .overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:flex-start;
+    padding:35px;
+    color:white;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.front .overlay div {
+    align-self:stretch;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.front .overlay .card-number{
+    padding-bottom:20px;
+    text-align:center;
+}
+.front svg {
+    position:absolute;
+    z-index:5;
+    top:25px;
+    left:25px;
+}
+.back{
+    margin-left:100px;
+    position:relative;
+}
+.back .overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    padding:60px 60px 70px 60px;
+    color:white;
+}
+.card{
+    position:relative;
+}
+form{
+    display:flex;
+    flex-direction:column;
+    width:375px;
+}
+.input-row, .expiry-cvc{
+    margin-bottom:25px;
+}
+.input-row, .expiry-date, .cvc{
+    display:flex;
+    flex-direction:column;
+}
+.expiry-cvc{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+label{
+    text-transform:uppercase;
+    margin-bottom:10px;
+    letter-spacing:2px;
+    font-size:13px;
+}
+input{
+    margin-left:2px;
+    border-radius:10px;
+    border:none;
+    border:1px solid hsl(270, 3%, 87%);
+    padding:15px;
+    color: hsl(278, 68%, 11%);
+    outline:none;
+}
+input:focus{
+    border-color: hsl(278, 68%, 11%)
+}
+.expiry-date input{
+    width: 75px;
+}
+a{
+    padding:15px;
+    background: linear-gradient(145deg, #905cb3 0%, #d80dac 100%);
+    border:none;
+    color:white;
+    border-radius:10px;
+    text-transform:capitalize;
+    text-align:center;
+    cursor:pointer;
+    align-self:stretch;
+}
+.error{
+    color:hsl(0, 100%, 66%);
+    font-size:12px;
+    margin-top:3px;
+}
+.confirmation{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    width: 375px;
+}
+.confirmation p{
+    color: hsl(279, 6%, 55%);
+    margin-bottom: 75px;
+}
+.confirmation h1{
+    color: hsl(278, 68%, 11%);
+    margin: 30px 0px 20px 0px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+.card-number{
+    font-size:28px;
+}
+.card-name, .card-expiry{
+    font-size:16px;
+}
+
+@media only screen and (max-width:1050px){
+    .bg{
+        flex-direction:column;
+    }
+    .bg-left{
+        flex:0.45;
+    }
+    main{
+        height:90vh;
+    }
+    .card img {
+        width:325px;
+        height:200px;
+    }
+    section{
+        position:relative;
+        width:90vw;
+        height:375px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+    section .card{
+        position:absolute;
+    }
+    .front{
+        z-index:5;
+        transform:translateY(125px);
+    }
+    .front svg {
+        transform:scale(0.5);
+        top:5px;
+        left:5px;
+    }
+    .card-number{
+        font-size:20px;
+    }
+    .card-name, .card-expiry{
+        font-size:12px;
+    }
+    .card-cvc{
+        font-size:12px;
+    }
+}
